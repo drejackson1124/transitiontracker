@@ -1,0 +1,32 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-transitiontracker-dev-190231-authRole",
+      "UnauthRoleArn": "arn:aws:iam::900254573024:role/amplify-transitiontracker-dev-190231-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::900254573024:role/amplify-transitiontracker-dev-190231-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-transitiontracker-dev-190231-deployment",
+      "UnauthRoleName": "amplify-transitiontracker-dev-190231-unauthRole",
+      "StackName": "amplify-transitiontracker-dev-190231",
+      "StackId": "arn:aws:cloudformation:us-east-1:900254573024:stack/amplify-transitiontracker-dev-190231/74502d90-a38a-11ee-94f1-12e255fc4fcd",
+      "AmplifyAppId": "d2ctz2zef1dqpf"
+    },
+    "categories": {
+      "auth": {
+        "transitiontracker46ebba2c": {
+          "userPoolId": "us-east-1_el7w8UnmW",
+          "userPoolName": "TransTrackerAppUserPool",
+          "webClientId": "5hqgbe6525mpbn6l6ro7niehe4",
+          "nativeClientId": "5hqgbe6525mpbn6l6ro7niehe4",
+          "identityPoolId": "us-east-1:13d8631f-b206-4ca6-bc35-29c1db10b7fa",
+          "identityPoolName": "MyTransitionTrackerIDP",
+          "allowUnauthenticatedIdentities": false,
+          "authRoleArn": "arn:aws:iam::900254573024:role/service-role/MyTransitionTrackerRole",
+          "authRoleName": "MyTransitionTrackerRole",
+          "unauthRoleArn": "arn:aws:iam::900254573024:role/service-role/MyTransitionTrackerRoleUNAUTH",
+          "unauthRoleName": "MyTransitionTrackerRoleUNAUTH"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "auth": {
+    "transitiontracker46ebba2c": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito",
+      "serviceType": "imported"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_transitiontracker46ebba2c_allowUnauthenticatedIdentities": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "transitiontracker46ebba2c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_transitiontracker46ebba2c_authRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "transitiontracker46ebba2c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_transitiontracker46ebba2c_authRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "transitiontracker46ebba2c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_transitiontracker46ebba2c_identityPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "transitiontracker46ebba2c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_transitiontracker46ebba2c_identityPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "transitiontracker46ebba2c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_transitiontracker46ebba2c_nativeClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "transitiontracker46ebba2c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_transitiontracker46ebba2c_unauthRoleArn": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "transitiontracker46ebba2c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_transitiontracker46ebba2c_unauthRoleName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "transitiontracker46ebba2c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_transitiontracker46ebba2c_userPoolId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "transitiontracker46ebba2c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_transitiontracker46ebba2c_userPoolName": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "transitiontracker46ebba2c"
+        }
+      ]
+    },
+    "AMPLIFY_auth_transitiontracker46ebba2c_webClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "transitiontracker46ebba2c"
+        }
+      ]
+    }
+  }
+}
