@@ -2,7 +2,9 @@ import React from 'react';
 
 const Home = (props) => {
     return (
-        <h1>Home!</h1>
+        <div>
+            <h1>Hello {props.user.username} !</h1>
+        </div>
     )
 }
 
