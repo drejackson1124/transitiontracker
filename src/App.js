@@ -11,6 +11,7 @@ import config from './amplifyconfiguration.json';
 import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
 import Navbar from './layouts/navbar';
+import AddAppointments from './layouts/addappointment';
 Amplify.configure(config);
 
 const formFields = {
@@ -90,6 +91,7 @@ export default function App() {
             <Routes>
               <Route path="/" element={<Home signOut={signOut} user={user}/>} />
               <Route path="/dashboard" element={<Dashboard user={user} signOut={signOut} />} />
+              <Route path="/addappt" element={<AddAppointments user={user} />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </Router>

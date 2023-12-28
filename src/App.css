@@ -25,3 +25,56 @@
   border-radius: 0;
   text-align: center;
 }
+
+.update-history-btn {
+  color: white; 
+}
+
+.purple-bg {
+  background-color: #5e17eb;
+}
+
+.light-green-bg {
+  background: #17eb5e;
+}
+
+.purple-text {
+  color: #5e17eb;
+}
+
+.white-text {
+  color: white;
+}
+
+.update-history-btn:hover {
+  background-color: white;
+  color: #5e17eb; 
+  border: 2px solid #5e17eb;
+}
+
+.history-btn-text {
+  font-size: smaller;
+  color: #ff6666;
+}
+
+.history-btn-text:hover {
+  font-size: smaller;
+  color: black;
+}
+
+.tracker-card {
+  border: 2px solid #5e17eb;
+}
+
+.tracker-card-title {
+  color: #5e17eb;
+  text-align: center;
+}
+
+.small-text {
+  font-size: small;
+}
+
+.set-appt-con {
+  margin: 0 5em;
+}

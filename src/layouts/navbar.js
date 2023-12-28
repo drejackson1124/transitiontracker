@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
     return (
@@ -16,7 +17,7 @@ const Navbar = (props) => {
                 <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div className="navbar-nav">
                         <form className="container-fluid justify-content-center">
-                            <button className="btn me-2 nav-btn" type="button">Dashboard</button>
+                            <Link to="/" className="btn me-2 nav-btn" type="button">Dashboard</Link>
                             <button className="btn me-2 nav-btn" type="button">My Progress</button>
                             <button className="btn me-2 nav-btn" type="button">Resources</button>
                             <button className="btn me-2 nav-btn" type="button">Community</button>
