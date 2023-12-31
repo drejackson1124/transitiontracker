@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './layouts/home';
@@ -12,6 +12,7 @@ import { Amplify } from 'aws-amplify';
 import '@aws-amplify/ui-react/styles.css';
 import Navbar from './layouts/navbar';
 import AddAppointments from './layouts/addappointment';
+import AllAppointments from './layouts/allappointments';
 Amplify.configure(config);
 
 const formFields = {
@@ -57,6 +58,8 @@ const formFields = {
 
 export default function App() {
 
+  const [appts, updateAppts] = useState([]);
+
   const components = {
     Header() {
       const { tokens } = useTheme();
@@ -83,15 +86,20 @@ export default function App() {
       );
     }};
 
+  const getAppts = (appts) => {
+    updateAppts(appts);
+  }
+
   return (
     <Authenticator formFields={formFields} components={components}>
       {({ signOut, user }) => (
           <Router>
             <Navbar signOut={signOut} user={user}/>
             <Routes>
-              <Route path="/" element={<Home signOut={signOut} user={user}/>} />
+              <Route path="/" element={<Home signOut={signOut} user={user} getAppts={getAppts}/>} />
               <Route path="/dashboard" element={<Dashboard user={user} signOut={signOut} />} />
               <Route path="/addappt" element={<AddAppointments user={user} />} />
+              <Route path="/allappts" element={<AllAppointments appts={appts} user={user} />} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </Router>

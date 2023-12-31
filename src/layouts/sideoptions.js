@@ -22,16 +22,16 @@ const SideOptions = (props) => {
         <div className="col-12">
             <div className="d-grid gap-3">
                 <Link to="/addappt" className="btn update-history-btn btn-lg purple-bg" type="button" id="addapt">
-                    Add Appointment <br/> <span className="history-btn-text">Add an upcoming appointment</span>
+                    Add Appointment <br/> <span className="light-green-text">Add an upcoming appointment</span>
                 </Link>
-                <button className="btn update-history-btn btn-lg purple-bg" type="button" id="updatemood">
-                    Update Daily Mood <br/> <span className="history-btn-text">Monitor your moods</span>
+                <button onClick={() => { props.setShowModal(true) }} className="btn update-history-btn btn-lg purple-bg" type="button" id="updatemood">
+                    Update Daily Mood <br/> <span className="light-green-text">Monitor your moods</span>
                 </button>
                 <button className="btn update-history-btn btn-lg purple-bg" type="button" id="updateprogress">
-                    Update Progress <br/> <span className="history-btn-text">Update your changes here</span>
+                    Update Progress <br/> <span className="light-green-text">Update your changes here</span>
                 </button>
                 <button className="btn update-history-btn btn-lg purple-bg" type="button" id="medications">
-                    Medications <br/> <span className="history-btn-text">View or update medications</span>
+                    Medications <br/> <span className="light-green-text">View or update medications</span>
                 </button>
             </div>            
         </div>

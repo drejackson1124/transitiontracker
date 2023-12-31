@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import helpers from '../helpers/helpers';
 import moment from 'moment';
+import { css } from '@emotion/react';
+import { ClipLoader } from 'react-spinners';
 
 const MyAppointments = (props) => {
     const [appts, updateAppts] = useState([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [itemsPerPage, setItemsPerPage] = useState(8);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getAppointments(props.user.username);
@@ -15,43 +16,43 @@ const MyAppointments = (props) => {
         const appointments = await helpers.getAppointments(username);
         if(appointments.statusCode === 200){
             updateAppts(appointments.body);
+            props.getAppts(appointments.body);
+            setLoading(false);
         } else {
             console.log("something went wrong");
         }
     };
 
-    // Get current appointments
-    const indexOfLastItem = currentPage * itemsPerPage;
-    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-    const currentItems = appts.slice(indexOfFirstItem, indexOfLastItem);
-    
-    // Change page
-    const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
     return (
         <div>
+            {loading ? (
+                <ClipLoader color="#6610f2" loading={loading} css={spinnerStyle} size={35} />
+            ): (
             <ul className="list-group list-group-flush">
-                {currentItems.map((appt, index) => (
-                    <li key={index} className="list-group-item small-text">
-                        {/* <span className="bold">{appt.appt_type.toUpperCase()}:</span> {appt.time}{appt.meridiem} on {appt.date} */}
+                {appts.filter(appt => moment(appt.date).isBetween(moment(), moment().add(14, 'days'), undefined, '[]')).map((appt, index) => (
+                    <li key={index} className="list-group-item large-text">
+                        <i class="fa-solid fa-calendar-check me-3 purple-text"></i>
                         <span className="bold">{appt.appt_type.toUpperCase()}:</span> {appt.time}{appt.meridiem} on {moment(appt.date).format('ll')}
                     </li>
                 ))}
             </ul>
-            <nav>
-                <ul className="pagination justify-content-center">
-                    {Array.from({ length: Math.ceil(appts.length / itemsPerPage) }, (_, i) => i + 1).map(number => (
-                        <li key={number} className="page-item">
-                            <a onClick={(e) => { e.preventDefault(); paginate(number)}} href="!#" className="page-link">
-                                {number}
-                            </a>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
-
+            )}
+            {/* <ul className="list-group list-group-flush">
+                {appts.filter(appt => moment(appt.date).isBetween(moment(), moment().add(14, 'days'), undefined, '[]')).map((appt, index) => (
+                    <li key={index} className="list-group-item large-text">
+                        <i class="fa-solid fa-calendar-check me-3 purple-text"></i>
+                        <span className="bold">{appt.appt_type.toUpperCase()}:</span> {appt.time}{appt.meridiem} on {moment(appt.date).format('ll')}
+                    </li>
+                ))}
+            </ul>
+        </div> */}
         </div>
     )
-}
+};
+
+const spinnerStyle = css`
+  display: block;
+  margin: auto;
+`;
 
 export default MyAppointments;

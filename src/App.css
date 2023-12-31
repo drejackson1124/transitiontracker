@@ -26,6 +26,12 @@
   text-align: center;
 }
 
+.view-all-appts-btn {
+  background-color: #5e17eb;
+  color: white;
+  text-align: center;
+}
+
 .update-history-btn {
   color: white; 
 }
@@ -36,6 +42,10 @@
 
 .light-green-bg {
   background: #17eb5e;
+}
+
+.light-green-text {
+  color: #17eb5e;
 }
 
 .purple-text {
@@ -64,11 +74,6 @@
   border: 2px solid #5e17eb;
 }
 
-.history-btn-text {
-  font-size: smaller;
-  color: #ff6666;
-}
-
 .history-btn-text:hover {
   font-size: smaller;
   color: black;
@@ -85,6 +90,10 @@
 
 .small-text {
   font-size: small;
+}
+
+.large-text {
+  font-size: larger;
 }
 
 .set-appt-con {
