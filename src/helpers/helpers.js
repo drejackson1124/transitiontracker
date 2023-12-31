@@ -4,7 +4,12 @@ const helpers = {
 
     //add user information to dynamodb after sign up
     getAppointments: async function(username){
-
+        try {
+            const response = await axios.post('https://xcvnmscgn2.execute-api.us-east-1.amazonaws.com/Production/get-appointments', {username});
+            return response.data;
+        } catch(error) {
+            return error.response ? error.response.data : { error: "Unknown error" };
+        }
     },
 
     addAppointment: async function(username, time, date, meridiem, appt_type){

@@ -31,7 +31,7 @@ const Home = (props) => {
                         <div class="card h-100 tracker-card">
                         <div class="card-body">
                             <h5 class="card-title tracker-card-title">Upcoming Appointments</h5>
-                            <MyAppointments/>
+                            <MyAppointments user={props.user}/>
                         </div>
                         </div>
                     </div>

@@ -46,6 +46,18 @@
   color: white;
 }
 
+.purple-outline {
+  border: 1px solid #5e17eb;
+}
+
+.red-outline {
+  border: 1px solid red;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 .update-history-btn:hover {
   background-color: white;
   color: #5e17eb; 

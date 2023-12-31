@@ -11,8 +11,9 @@ const AddAppointments = (props) => {
     const [date, setDate] = useState('');
 
     const addApptValues = async () => {
-        if(apptType === "Appointment Type" || date === ""){
-            alert("Please choose an appointment type and/or date");
+        if(apptType === "Appointment Type" || date === "" || meridiem === "AM/PM options" || time === "Choose time"){
+            console.log(apptType, time, meridiem, date);
+            alert("Please fill in all fields and try again.");
         } else {
             const addAppt = await helpers.addAppointment(props.user.username, time, date, meridiem, apptType);
             console.log(addAppt);
@@ -43,6 +44,7 @@ const AddAppointments = (props) => {
                 <div class="col-md">
                     <div class="form-floating">
                     <select class="form-select form-select-lg" id="time" onChange={e=>{setTime(e.target.value)}}>
+                        <option selected>Choose time</option>
                         <option value="7">7</option>
                         <option value="8">8</option>
                         <option value="9">9</option>
@@ -61,8 +63,8 @@ const AddAppointments = (props) => {
                 </div>
                 <div class="col-md">
                     <div class="form-floating">
-                    <select class="form-select form-select-lg" id="meridiem" onChange={e=>{setMeridiem(e.target.value)}}>
-                        {/* <option selected>Morning or Afternoon?</option> */}
+                    <select class="form-select form-select-lg" id="meridiem" onChange={e=>{setMeridiem(e.target.value); console.log("Meridiem selected:", e.target.value);}}>
+                        <option selected>AM/PM options</option>
                         <option value="am">AM</option>
                         <option value="pm">PM</option>
                     </select>
