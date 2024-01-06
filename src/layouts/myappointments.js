@@ -37,15 +37,6 @@ const MyAppointments = (props) => {
                 ))}
             </ul>
             )}
-            {/* <ul className="list-group list-group-flush">
-                {appts.filter(appt => moment(appt.date).isBetween(moment(), moment().add(14, 'days'), undefined, '[]')).map((appt, index) => (
-                    <li key={index} className="list-group-item large-text">
-                        <i class="fa-solid fa-calendar-check me-3 purple-text"></i>
-                        <span className="bold">{appt.appt_type.toUpperCase()}:</span> {appt.time}{appt.meridiem} on {moment(appt.date).format('ll')}
-                    </li>
-                ))}
-            </ul>
-        </div> */}
         </div>
     )
 };

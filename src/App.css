@@ -9,7 +9,7 @@
 
 .nav-btn {
   outline-color: #5e17eb;
-  border-color: #5e17eb;
+  border: 3px solid #5e17eb;
 }
 
 .nav-btn:hover {
@@ -33,7 +33,13 @@
 }
 
 .update-history-btn {
-  color: white; 
+  color: black; 
+  border-bottom: 2px solid #5e17eb;
+}
+
+.username-box {
+  border: 3px solid #5e17eb;
+  border-radius: 30px;
 }
 
 .purple-bg {
@@ -56,6 +62,10 @@
   color: white;
 }
 
+.inline-block {
+  display: inline-flex;
+}
+
 .purple-outline {
   border: 1px solid #5e17eb;
 }
@@ -68,10 +78,41 @@
   font-weight: bold;
 }
 
-.update-history-btn:hover {
+.view-all-appts-btn:hover {
   background-color: white;
   color: #5e17eb; 
   border: 2px solid #5e17eb;
+}
+
+.update-history-btn:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.custom-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 30px;
+  opacity: 1;
+  outline: none;
+  margin: 0 auto;
+  }
+
+.custom-slider::-webkit-slider-thumb {
+appearance: none;
+-webkit-appearance: none;
+background: #5e17eb;
+height: 15px;
+width: 15px;
+border-radius: 50%;
+}
+
+.doughnut {
+  display: inline;
+}
+
+.fuchsia {
+  color: fuchsia;
 }
 
 .history-btn-text:hover {
@@ -96,6 +137,18 @@
   font-size: larger;
 }
 
+.orange-text {
+  color: #eb5e17;
+}
+
+.orange-bg {
+  background: #eb5e17;
+}
+
 .set-appt-con {
   margin: 0 5em;
+}
+
+.box-shadow-medium {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }

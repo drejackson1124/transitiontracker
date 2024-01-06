@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './layouts/home';
 import Dashboard from './layouts/dashboard';
-//import { withAuthenticator } from '@aws-amplify/ui-react';
+import ProgressPage from './layouts/progresspage';
 import { Authenticator, View, Image, useTheme, Text } from '@aws-amplify/ui-react';
 import config from './amplifyconfiguration.json';
 
@@ -59,6 +59,7 @@ const formFields = {
 export default function App() {
 
   const [appts, updateAppts] = useState([]);
+  const [moods, updateMoods] = useState([]);
 
   const components = {
     Header() {
@@ -96,10 +97,11 @@ export default function App() {
           <Router>
             <Navbar signOut={signOut} user={user}/>
             <Routes>
-              <Route path="/" element={<Home signOut={signOut} user={user} getAppts={getAppts}/>} />
+              <Route path="/" element={<Home signOut={signOut} user={user} getAppts={getAppts} updateMoods={updateMoods}/>} />
               <Route path="/dashboard" element={<Dashboard user={user} signOut={signOut} />} />
               <Route path="/addappt" element={<AddAppointments user={user} />} />
               <Route path="/allappts" element={<AllAppointments appts={appts} user={user} />} />
+              <Route path="/progresspage" element={<ProgressPage user={user} moods={moods}/>} />
               <Route path="*" element={<Navigate to="/" />} />
             </Routes>
           </Router>

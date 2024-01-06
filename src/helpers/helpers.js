@@ -39,6 +39,15 @@ const helpers = {
         }
     },
 
+    updateProgress: async function(username, date, voice, hair, strength, social, emotions){
+        try {
+            const response = await axios.post('https://xcvnmscgn2.execute-api.us-east-1.amazonaws.com/Production/update-progress', {username, date, voice, hair, strength, social, emotions})
+            return response.data;
+        } catch(error) {
+            return error.response ? error.response.data : { error: "Unknown error" };
+        }
+    },
+
 }
 
 export default helpers;

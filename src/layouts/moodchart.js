@@ -44,6 +44,9 @@ const MoodChart = (props) => {
       };
 
       setChartData(newChartData);
+      //console.log(moodCounts);
+      props.updateMoods(moodCounts);
+      //console.log(moodCounts)
       setLoading(false);
     } catch (error) {
       console.error('Error updating chart data:', error);
@@ -73,9 +76,9 @@ const MoodChart = (props) => {
           <ClipLoader color="#6610f2" loading={loading} css={spinnerStyle} size={35} />
         ) : (
           <div>
-            <button onClick={() => { props.setShowModal(true) }} className="btn update-history-btn btn-sm purple-bg mb-3" type="button" id="updatemooddm">
+            {/* <button onClick={() => { props.setShowModal(true) }} className="btn update-history-btn btn-sm purple-bg mb-3" type="button" id="updatemooddm">
               Update your mood
-            </button>
+            </button> */}
             <h6 className='large-text'>You haven't added any moods yet</h6>
           </div>
         )}
@@ -83,25 +86,14 @@ const MoodChart = (props) => {
     )
   } else {
     return (
-      <div>
+      <div className='m-0'>
         {loading ? (
           <ClipLoader color="#6610f2" loading={loading} css={spinnerStyle} size={35} />
         ) : (
-          <Doughnut data={chartData} />
+          <Doughnut data={chartData} className='doughnut' id='doughnut-chart'/>
         )}       
       </div>
     )
-    // {loading ? (
-    //   <ClipLoader color="#6610f2" loading={loading} css={spinnerStyle} size={35} />
-    // ) : (
-    //   <div>
-    //     <button onClick={() => { props.setShowModal(true) }} className="btn update-history-btn btn-sm purple-bg mb-3" type="button" id="updatemooddm">
-    //       Update your mood
-    //     </button>
-    //     <h6 className='large-text'>You haven't added any moods yet</h6>
-    //   </div>
-    // )}
-    // return <Doughnut data={chartData} />;
   }
 };
 
